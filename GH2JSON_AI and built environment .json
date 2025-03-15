@@ -1,18 +1,377 @@
 {
-  "prompt": "Create Cluster from points using KMeans and create a box and subtract them with base Geometry.",
+  "prompt": "Create Cluster from points using KMeans and create a box and subtract them with base Geometry",
   "output": {
     "components": [
       {
         "id": 1,
-        "type": "Panel",
+        "type": "Number Slider",
         "objectType": "Unknown",
         "category": "N/A",
         "subCategory": "N/A",
         "params": {
-          "Value": "Double click to edit panel content\u2026"
+          "Value": 73
         }
+      },
+      {
+        "id": 2,
+        "type": "Number Slider",
+        "objectType": "Unknown",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {
+          "Value": 7
+        }
+      },
+      {
+        "id": 3,
+        "type": "Geometry",
+        "objectType": "Parameter",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {}
+      },
+      {
+        "id": 4,
+        "type": "Script",
+        "objectType": "Component",
+        "category": "Maths",
+        "subCategory": "Script",
+        "params": {}
+      },
+      {
+        "id": 5,
+        "type": "Brep",
+        "objectType": "Parameter",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {}
+      },
+      {
+        "id": 6,
+        "type": "Sphere",
+        "objectType": "Component",
+        "category": "Surface",
+        "subCategory": "Primitive",
+        "params": {}
+      },
+      {
+        "id": 7,
+        "type": "Sphere",
+        "objectType": "Component",
+        "category": "Surface",
+        "subCategory": "Primitive",
+        "params": {}
+      },
+      {
+        "id": 8,
+        "type": "Volume",
+        "objectType": "Component",
+        "category": "Surface",
+        "subCategory": "Analysis",
+        "params": {}
+      },
+      {
+        "id": 9,
+        "type": "Colour Swatch",
+        "objectType": "Parameter",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {}
+      },
+      {
+        "id": 10,
+        "type": "Colour Swatch",
+        "objectType": "Parameter",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {}
+      },
+      {
+        "id": 11,
+        "type": "Number Slider",
+        "objectType": "Unknown",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {
+          "Value": 1.2
+        }
+      },
+      {
+        "id": 12,
+        "type": "Custom Preview",
+        "objectType": "Component",
+        "category": "Display",
+        "subCategory": "Preview",
+        "params": {}
+      },
+      {
+        "id": 13,
+        "type": "Custom Preview",
+        "objectType": "Component",
+        "category": "Display",
+        "subCategory": "Preview",
+        "params": {}
+      },
+      {
+        "id": 14,
+        "type": "Gradient",
+        "objectType": "Component",
+        "category": "Params",
+        "subCategory": "Input",
+        "params": {}
+      },
+      {
+        "id": 15,
+        "type": "Scale",
+        "objectType": "Component",
+        "category": "Transform",
+        "subCategory": "Affine",
+        "params": {}
+      },
+      {
+        "id": 16,
+        "type": "Colour Swatch",
+        "objectType": "Parameter",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {}
+      },
+      {
+        "id": 17,
+        "type": "Solid Difference",
+        "objectType": "Component",
+        "category": "Intersect",
+        "subCategory": "Shape",
+        "params": {}
+      },
+      {
+        "id": 18,
+        "type": "Custom Preview",
+        "objectType": "Component",
+        "category": "Display",
+        "subCategory": "Preview",
+        "params": {}
+      },
+      {
+        "id": 19,
+        "type": "Custom Preview",
+        "objectType": "Component",
+        "category": "Display",
+        "subCategory": "Preview",
+        "params": {}
       }
     ],
-    "connections": []
+    "connections": [
+      {
+        "from": {
+          "id": 4,
+          "output": "a"
+        },
+        "to": {
+          "id": 7,
+          "input": "Base"
+        }
+      },
+      {
+        "from": {
+          "id": 4,
+          "output": "b"
+        },
+        "to": {
+          "id": 6,
+          "input": "Base"
+        }
+      },
+      {
+        "from": {
+          "id": 4,
+          "output": "d"
+        },
+        "to": {
+          "id": 14,
+          "input": "Parameter"
+        }
+      },
+      {
+        "from": {
+          "id": 4,
+          "output": "e"
+        },
+        "to": {
+          "id": 15,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 4,
+          "output": "e"
+        },
+        "to": {
+          "id": 8,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 4,
+          "output": "f"
+        },
+        "to": {
+          "id": 5,
+          "input": "Brep"
+        }
+      },
+      {
+        "from": {
+          "id": 3,
+          "output": "Geometry"
+        },
+        "to": {
+          "id": 4,
+          "input": "geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 1,
+          "output": "Number Slider"
+        },
+        "to": {
+          "id": 4,
+          "input": "Pt_Count"
+        }
+      },
+      {
+        "from": {
+          "id": 2,
+          "output": "Number Slider"
+        },
+        "to": {
+          "id": 4,
+          "input": "Cl_Count"
+        }
+      },
+      {
+        "from": {
+          "id": 5,
+          "output": "Brep"
+        },
+        "to": {
+          "id": 17,
+          "input": "Breps A"
+        }
+      },
+      {
+        "from": {
+          "id": 14,
+          "output": "Colour"
+        },
+        "to": {
+          "id": 18,
+          "input": "Material"
+        }
+      },
+      {
+        "from": {
+          "id": 10,
+          "output": "Colour Swatch"
+        },
+        "to": {
+          "id": 12,
+          "input": "Material"
+        }
+      },
+      {
+        "from": {
+          "id": 17,
+          "output": "Result"
+        },
+        "to": {
+          "id": 19,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 15,
+          "output": "Geometry"
+        },
+        "to": {
+          "id": 18,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 15,
+          "output": "Geometry"
+        },
+        "to": {
+          "id": 17,
+          "input": "Breps B"
+        }
+      },
+      {
+        "from": {
+          "id": 8,
+          "output": "Centroid"
+        },
+        "to": {
+          "id": 15,
+          "input": "Center"
+        }
+      },
+      {
+        "from": {
+          "id": 11,
+          "output": "Number Slider"
+        },
+        "to": {
+          "id": 15,
+          "input": "Factor"
+        }
+      },
+      {
+        "from": {
+          "id": 7,
+          "output": "Sphere"
+        },
+        "to": {
+          "id": 12,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 16,
+          "output": "Colour Swatch"
+        },
+        "to": {
+          "id": 19,
+          "input": "Material"
+        }
+      },
+      {
+        "from": {
+          "id": 6,
+          "output": "Sphere"
+        },
+        "to": {
+          "id": 13,
+          "input": "Geometry"
+        }
+      },
+      {
+        "from": {
+          "id": 9,
+          "output": "Colour Swatch"
+        },
+        "to": {
+          "id": 13,
+          "input": "Material"
+        }
+      }
+    ]
   }
 }
