@@ -1,0 +1,18 @@
+{
+  "prompt": "Create Cluster from points using KMeans and create a box and subtract them with base Geometry.",
+  "output": {
+    "components": [
+      {
+        "id": 1,
+        "type": "Panel",
+        "objectType": "Unknown",
+        "category": "N/A",
+        "subCategory": "N/A",
+        "params": {
+          "Value": "Double click to edit panel content\u2026"
+        }
+      }
+    ],
+    "connections": []
+  }
+}
